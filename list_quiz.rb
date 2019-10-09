@@ -32,27 +32,19 @@ end
 # puts bigger_two([1, 7], [4, 4]) # [1, 7]
 
 
-def series_up(n)
-    n.size.times do |num|
-        n1 = n
-        n2 = n - 1
-        n3 = n - 2
-        n4 = n - 3
-        if n == 1
-            return n1
-        end
-        if n == 2
-            return n2, n2, n1
-        end
-        if n == 3
-            return n3, n3, n2, n3, n2, n1
-        end
-        if n == 4
-            return n4, n4, n3, n4, n3, n2, n4, n3, n2, n1
-        end
+def series_up(n)                            # Got help again. My first code couldn't adapt at all. This one has a reset limit, meaning it loops the amount of times it needs to for each interger. Still not perfect, but almost there. 
+    list = [1]
+    i = 1
+    length = n*(n+1)/2
+    reset = 3
+    list.push i
+        i += 1
+    if i == reset
+        reset += 1
     end
+    return list
 end
-# # puts series_up(1)
-# # puts series_up(2)
-# # puts series_up(3)
-# puts series_up(4)
+puts series_up(1)
+puts series_up(2)
+puts series_up(3)
+puts series_up(4)
